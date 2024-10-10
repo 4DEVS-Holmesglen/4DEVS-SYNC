@@ -34,7 +34,14 @@ const CloseButton = styled.button`
   cursor: pointer;
 `;
 
-function AlertDialog({ title, body, btnText, alertType }) {
+function AlertDialog({
+  title,
+  body,
+  btnText,
+  alertType,
+  buttonVariant,
+  insideBtn,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDialog = () => {
@@ -44,7 +51,7 @@ function AlertDialog({ title, body, btnText, alertType }) {
   return (
     <>
       {/* Button to open the alert dialog */}
-      <Button text={btnText} variant="default" onClick={toggleDialog} />
+      <Button text={btnText} variant={buttonVariant} onClick={toggleDialog} />
 
       {/* Overlay for Alert */}
       <Overlay isOpen={isOpen} onClick={toggleDialog}>
@@ -53,7 +60,7 @@ function AlertDialog({ title, body, btnText, alertType }) {
           <CloseButton onClick={toggleDialog}>&times;</CloseButton>
 
           {/* Alert component inside the dialog */}
-          <Alert title={title} body={body} type={alertType} btn={btnText} />
+          <Alert title={title} body={body} type={alertType} btn={insideBtn} />
         </DialogContainer>
       </Overlay>
     </>
@@ -65,6 +72,7 @@ AlertDialog.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   btnText: PropTypes.string.isRequired,
+  insideBtn: PropTypes.string.isRequired,
   alertType: PropTypes.oneOf([
     "default",
     "primary",
@@ -75,6 +83,12 @@ AlertDialog.propTypes = {
     "successDark",
     "warningDark",
   ]).isRequired,
+  buttonVariant: PropTypes.oneOf(["default", "primary", "success", "warning"]), // Define available button variants
+};
+
+// Default props in case buttonVariant is not provided
+AlertDialog.defaultProps = {
+  buttonVariant: "default",
 };
 
 export default AlertDialog;
