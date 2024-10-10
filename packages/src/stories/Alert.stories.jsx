@@ -11,7 +11,6 @@ export default {
   args: {
     title: "Default Alert Title",
     body: "This is the default alert body.",
-    btn: "Close",
     type: "primary",
   },
 };

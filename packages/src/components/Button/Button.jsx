@@ -57,7 +57,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ text, variant, hoverColor }) => {
+const Button = ({ text, variant, hoverColor, onClick }) => {
   const styles = {
     default: {
       borderGradient: "linear-gradient(90deg, #00c0ff, #635BE7, #a000ff)",
@@ -95,6 +95,7 @@ const Button = ({ text, variant, hoverColor }) => {
         <StyledButton
           buttonBackgroundColor={backgroundColor}
           textColor={textColor}
+          onClick={onClick} // Pass the onClick prop to the button
         >
           {text}
         </StyledButton>
@@ -104,12 +105,14 @@ const Button = ({ text, variant, hoverColor }) => {
 };
 
 Button.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   variant: PropTypes.oneOf(["default", "primary", "success", "warning"]),
+  onClick: PropTypes.func, // Add onClick as a prop
 };
 
 Button.defaultProps = {
   variant: "default",
+  onClick: () => {}, // Default no-op function if onClick is not provided
 };
 
 export default Button;

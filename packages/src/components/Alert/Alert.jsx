@@ -206,7 +206,6 @@ Alert.propTypes = {
     "successDark",
     "warningDark",
   ]).isRequired,
-  icon: PropTypes.element,
 };
 
 export default Alert;
