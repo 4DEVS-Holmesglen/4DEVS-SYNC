@@ -95,24 +95,13 @@ const Button = ({ text, variant, hoverColor, onClick }) => {
         <StyledButton
           buttonBackgroundColor={backgroundColor}
           textColor={textColor}
-          onClick={onClick} // Pass the onClick prop to the button
+          onClick={onClick} // pass the onClick from props
         >
           {text}
         </StyledButton>
       </MarkBox>
     </>
   );
-};
-
-Button.propTypes = {
-  text: PropTypes.string,
-  variant: PropTypes.oneOf(["default", "primary", "success", "warning"]),
-  onClick: PropTypes.func, // Add onClick as a prop
-};
-
-Button.defaultProps = {
-  variant: "default",
-  onClick: () => {}, // Default no-op function if onClick is not provided
 };
 
 export default Button;
