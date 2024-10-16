@@ -57,7 +57,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ text, variant, onClick }) => {
+const Button = ({ text, variant, onClick, type }) => {
   const styles = {
     default: {
       borderGradient: "linear-gradient(90deg, #00c0ff, #635BE7, #a000ff)",
@@ -95,7 +95,8 @@ const Button = ({ text, variant, onClick }) => {
         <StyledButton
           buttonBackgroundColor={backgroundColor}
           textColor={textColor}
-          onClick={onClick} // pass the onClick from props
+          onClick={onClick}
+          type={onClick ? "button" : "submit"}
         >
           {text}
         </StyledButton>
@@ -104,13 +105,13 @@ const Button = ({ text, variant, onClick }) => {
   );
 };
 
-Button.prototype = {
+//  propTypes definition
+Button.propTypes = {
   text: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   variant: PropTypes.oneOf(["default", "primary", "success", "warning"])
     .isRequired,
+  type: PropTypes.oneOf(["button", "submit", "reset"]).isRequired,
 };
 
 export default Button;
-
-// add more prop to make a button work 'type: summit/button width, textsize'
