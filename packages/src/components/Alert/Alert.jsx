@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const AlertStyled = styled.div`
-  width: 550px;
+  width: 600px;
   padding: 20px 20px 15px 70px;
   margin-bottom: 20px;
   background-color: ${({ backgroundColor }) => backgroundColor};
@@ -48,7 +48,7 @@ const AlertStyled = styled.div`
     color: ${({ textColor }) => textColor};
   }
 
-  button {
+  /* button {
     background-color: ${({ buttonColor }) => buttonColor};
     border: none;
     font-family: "Montserrat";
@@ -59,7 +59,7 @@ const AlertStyled = styled.div`
     font-size: 1rem;
     margin: 2% 0 0 70%;
     border-radius: 6px;
-  }
+  } */
 
   .box-mark {
     position: absolute;
@@ -81,7 +81,7 @@ const AlertStyled = styled.div`
 const IconWrapper = styled.div`
   position: absolute;
   left: -5.5%;
-  top: 30%;
+  top: 22%;
   width: 65px;
   height: 65px;
   border-radius: 50%;
@@ -99,7 +99,7 @@ const Alert = ({ title, body, btn, type, icon: IconComponent }) => {
     default: {
       borderGradient: "linear-gradient(90deg, #00c0ff, #635BE7, #a000ff)",
       backgroundColor: "#ffffff",
-      buttonColor: "#b4b4b4",
+
       iconBackground: "linear-gradient(90deg, #00c0ff, #635BE7)",
       icon: <FiCheck />,
       textColor: "#000000",
@@ -107,7 +107,7 @@ const Alert = ({ title, body, btn, type, icon: IconComponent }) => {
     defaultDark: {
       borderGradient: "linear-gradient(90deg, #00c0ff, #635BE7, #a000ff)",
       backgroundColor: "#000000",
-      buttonColor: "#ffffff",
+
       iconBackground: "linear-gradient(90deg, #00c0ff, #635BE7)",
       icon: <FiCheck />,
       textColor: "#ffffff",
@@ -115,7 +115,7 @@ const Alert = ({ title, body, btn, type, icon: IconComponent }) => {
     primary: {
       borderGradient: "linear-gradient(90deg, #3b82f6, #ffffff, #3b82f6)",
       backgroundColor: "#ffffff",
-      buttonColor: "#3b82f6",
+
       iconBackground: "#3b82f6",
       icon: <FiCheck />,
       textColor: "#000000",
@@ -123,7 +123,7 @@ const Alert = ({ title, body, btn, type, icon: IconComponent }) => {
     primaryDark: {
       borderGradient: "linear-gradient(90deg, #3b82f6, #ffffff, #3b82f6)",
       backgroundColor: "#000000",
-      buttonColor: "#3b82f6",
+
       iconBackground: "#3b82f6",
       icon: <FiCheck />,
       textColor: "#ffffff",
@@ -131,7 +131,7 @@ const Alert = ({ title, body, btn, type, icon: IconComponent }) => {
     success: {
       borderGradient: "linear-gradient(90deg, #16a34a, #ffffff,  #16a34a)",
       backgroundColor: "#ffffff",
-      buttonColor: "#16a34a",
+
       iconBackground: "#16a34a",
       icon: <FiCheck />,
       textColor: "#000000",
@@ -139,7 +139,7 @@ const Alert = ({ title, body, btn, type, icon: IconComponent }) => {
     successDark: {
       borderGradient: "linear-gradient(90deg, #16a34a, #ffffff,  #16a34a)",
       backgroundColor: "#000000",
-      buttonColor: "#16a34a",
+
       iconBackground: "#16a34a",
       icon: <FiCheck />,
       textColor: "#ffffff",
@@ -147,7 +147,7 @@ const Alert = ({ title, body, btn, type, icon: IconComponent }) => {
     warning: {
       borderGradient: "linear-gradient(90deg, #dc2626, #ffffff, #dc2626)",
       backgroundColor: "#ffffff",
-      buttonColor: "#dc2626",
+
       iconBackground: "#dc2626",
       icon: <FiCheck />,
       textColor: "#000000",
@@ -155,7 +155,7 @@ const Alert = ({ title, body, btn, type, icon: IconComponent }) => {
     warningDark: {
       borderGradient: "linear-gradient(90deg, #dc2626, #ffffff, #dc2626)",
       backgroundColor: "#000000",
-      buttonColor: "#dc2626",
+
       iconBackground: "#dc2626",
       icon: <FiCheck />,
       textColor: "#ffffff",
@@ -186,7 +186,7 @@ const Alert = ({ title, body, btn, type, icon: IconComponent }) => {
         </IconWrapper>
         <h2>{title}</h2>
         <p>{body}</p>
-        <button>{btn}</button>
+        {/*<button>{btn}</button>*/}
       </AlertStyled>
     </>
   );
@@ -195,7 +195,6 @@ const Alert = ({ title, body, btn, type, icon: IconComponent }) => {
 Alert.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-  btn: PropTypes.string.isRequired,
   type: PropTypes.oneOf([
     "default",
     "primary",

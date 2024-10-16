@@ -11,7 +11,8 @@ const Overlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(2px);
   z-index: 999;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
 `;
@@ -24,24 +25,7 @@ const DialogContainer = styled.div`
   z-index: 1000;
 `;
 
-const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-`;
-
-function AlertDialog({
-  title,
-  body,
-  btnText,
-  alertType,
-  buttonVariant,
-  insideBtn,
-}) {
+function AlertDialog({}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDialog = () => {
@@ -50,45 +34,33 @@ function AlertDialog({
 
   return (
     <>
-      {/* Button to open the alert dialog */}
-      <Button text={btnText} variant={buttonVariant} onClick={toggleDialog} />
+      {/* <button className="btn btn-primary" onClick={toggleDialog}>
+        Button as link
+      </button> */}
+
+      <Button text="Click Me" variant="primary" onClick={toggleDialog} />
 
       {/* Overlay for Alert */}
       <Overlay isOpen={isOpen} onClick={toggleDialog}>
         <DialogContainer onClick={(e) => e.stopPropagation()}>
-          {/* Close button for the dialog */}
-          <CloseButton onClick={toggleDialog}>&times;</CloseButton>
+          {/* to stop the event from  bubblingup to parent elements. When a click event occurs on an element, it typically bubbles up to its ancestors in the DOM tree. Calling stopPropagation() prevents that from happening. */}
 
-          {/* Alert component inside the dialog */}
-          <Alert title={title} body={body} type={alertType} btn={insideBtn} />
+          <Alert
+            title="Alert!!!!"
+            body="This is a alert—check it out! This is a alert—check it out!"
+            type="primary"
+          />
+
+          {/* <div className="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+            Here of information{" "}
+            <a href="wwww.google.com">This is a alert—check it out! </a>
+          </div> */}
+
+          
         </DialogContainer>
       </Overlay>
     </>
   );
 }
-
-// Prop type validation
-AlertDialog.propTypes = {
-  title: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-  btnText: PropTypes.string.isRequired,
-  insideBtn: PropTypes.string.isRequired,
-  alertType: PropTypes.oneOf([
-    "default",
-    "primary",
-    "success",
-    "warning",
-    "defaultDark",
-    "primaryDark",
-    "successDark",
-    "warningDark",
-  ]).isRequired,
-  buttonVariant: PropTypes.oneOf(["default", "primary", "success", "warning"]), // Define available button variants
-};
-
-// Default props in case buttonVariant is not provided
-AlertDialog.defaultProps = {
-  buttonVariant: "default",
-};
 
 export default AlertDialog;
