@@ -11,7 +11,7 @@ export default {
   args: {
     title: "Default Alert Title",
     body: "This is the default alert body.",
-    type: "primary",
+    status: "primary",
   },
 };
 
@@ -21,5 +21,5 @@ export const DefaultAlert = Template.bind({});
 DefaultAlert.args = {
   title: "Title: Operation Successful",
   body: "Alert Alert: System malfunction detected. Immediate attention required. Failure to address may result in critical errors.",
-  type: "primary",
+  status: "primary",
 };

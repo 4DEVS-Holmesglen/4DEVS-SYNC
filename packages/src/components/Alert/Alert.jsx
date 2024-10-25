@@ -26,7 +26,8 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const AlertStyled = styled.div`
-  width: 600px;
+  width: "auto";
+  max-width: 500px;
   padding: 20px 20px 15px 70px;
   margin-bottom: 20px;
   background-color: ${({ backgroundColor }) => backgroundColor};
@@ -47,19 +48,6 @@ const AlertStyled = styled.div`
     margin: 8px 0;
     color: ${({ textColor }) => textColor};
   }
-
-  /* button {
-    background-color: ${({ buttonColor }) => buttonColor};
-    border: none;
-    font-family: "Montserrat";
-    padding: 10px 35px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    margin: 2% 0 0 70%;
-    border-radius: 6px;
-  } */
 
   .box-mark {
     position: absolute;
@@ -94,7 +82,7 @@ const IconWrapper = styled.div`
   font-size: 45px;
 `;
 
-const Alert = ({ title, body, btn, type, icon: IconComponent }) => {
+const Alert = ({ title, body, status, icon: IconComponent }) => {
   const alertStyles = {
     default: {
       borderGradient: "linear-gradient(90deg, #00c0ff, #635BE7, #a000ff)",
@@ -169,7 +157,7 @@ const Alert = ({ title, body, btn, type, icon: IconComponent }) => {
     iconBackground,
     icon,
     textColor,
-  } = alertStyles[type] || alertStyles.primary;
+  } = alertStyles[status] || alertStyles.primary;
 
   return (
     <>
@@ -195,7 +183,7 @@ const Alert = ({ title, body, btn, type, icon: IconComponent }) => {
 Alert.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-  type: PropTypes.oneOf([
+  status: PropTypes.oneOf([
     "default",
     "primary",
     "success",

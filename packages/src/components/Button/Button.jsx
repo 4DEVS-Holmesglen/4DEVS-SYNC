@@ -57,7 +57,14 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ text, variant, onClick, type }) => {
+const Button = ({
+  children,
+  variant = "default",
+  hoverColor,
+  path,
+  type = "button", // Default button type
+  onClick,
+}) => {
   const styles = {
     default: {
       borderGradient: "linear-gradient(90deg, #00c0ff, #635BE7, #a000ff)",
@@ -86,7 +93,28 @@ const Button = ({ text, variant, onClick, type }) => {
   };
 
   const { borderGradient, backgroundColor, textColor } =
-    styles[variant] || styles.primary;
+    styles[variant] || styles.default;
+
+  if (path) {
+    return (
+      <>
+        <GlobalStyle />
+        <MarkBox borderGradient={borderGradient}>
+          <a href={path} target="_blank" rel="noopener noreferrer">
+            <StyledButton
+              buttonBackgroundColor={backgroundColor}
+              textColor={textColor}
+              hoverColor={hoverColor || styles[variant].hoverColor}
+              type={type}
+              onClick={onClick}
+            >
+              {children}
+            </StyledButton>
+          </a>
+        </MarkBox>
+      </>
+    );
+  }
 
   return (
     <>
@@ -95,23 +123,29 @@ const Button = ({ text, variant, onClick, type }) => {
         <StyledButton
           buttonBackgroundColor={backgroundColor}
           textColor={textColor}
+          hoverColor={hoverColor || styles[variant].hoverColor}
           onClick={onClick}
-          type={onClick ? "button" : "submit"}
+          type={type}
         >
-          {text}
+          {children}
         </StyledButton>
       </MarkBox>
     </>
   );
 };
 
-//  propTypes definition
 Button.propTypes = {
-  text: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
-  variant: PropTypes.oneOf(["default", "primary", "success", "warning"])
-    .isRequired,
-  type: PropTypes.oneOf(["button", "submit", "reset"]).isRequired,
+  children: PropTypes.string.isRequired,
+  variant: PropTypes.oneOf(["default", "primary", "success", "warning"]),
+  hoverColor: PropTypes.string,
+  path: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  type: PropTypes.oneOf(["button", "submit", "reset"]),
+};
+
+Button.defaultProps = {
+  variant: "default",
+  type: "button",
 };
 
 export default Button;
