@@ -1,6 +1,6 @@
 <img src="./packages/src/assets/img/4DEVSLOGO.png" alt="4DEVSLogo" style="width:100%; height:300px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 3px 3px 5px #888;"> <br>
 
-# react-handy-modal
+# SYNC
 
 ## Table
 
@@ -255,21 +255,3 @@ export default Sample;
 ## Contributors
 
 Thanks goes to these wonderful people.......
-
-<!-- HTML TABLE -->
-<table>
-  <tr>
-    <td align="center">
-    <a href=""><img src="" width="100px;" alt="TenTen"/><br /><sub><b>BOBBY</b></sub></a><br />  
-    </td>
-    <td align="center">
-    <a href=""><img src="" width="100px;" alt="Peng"/><br /><sub><b>VORAKORN (MOU)</b></sub></a><br />  
-    </td>
-    <td align="center">
-    <a href=""><img src="" width="100px;" alt="Kaz"/><br /><sub><b>HAMISH</b></sub></a><br />  
-    </td>
-    <td align="center">
-    <a href=""><img src="" width="100px;" alt="Yi"/><br /><sub><b>THITIPHANH (PENTIUM) </b></sub></a><br />  
-    </td>
-  </tr>
-</table>
