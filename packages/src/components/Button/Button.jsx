@@ -62,7 +62,7 @@ const Button = ({
   variant = "default",
   hoverColor,
   path,
-  type = "button", // Default button type
+  type = "button",
   onClick,
 }) => {
   const styles = {
@@ -100,13 +100,19 @@ const Button = ({
       <>
         <GlobalStyle />
         <MarkBox borderGradient={borderGradient}>
-          <a href={path} target="_blank" rel="noopener noreferrer">
+          <a
+            href={path}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Link to ${path}`}
+          >
             <StyledButton
               buttonBackgroundColor={backgroundColor}
               textColor={textColor}
               hoverColor={hoverColor || styles[variant].hoverColor}
               type={type}
               onClick={onClick}
+              aria-label={children}
             >
               {children}
             </StyledButton>
@@ -126,6 +132,7 @@ const Button = ({
           hoverColor={hoverColor || styles[variant].hoverColor}
           onClick={onClick}
           type={type}
+          aria-label={children}
         >
           {children}
         </StyledButton>

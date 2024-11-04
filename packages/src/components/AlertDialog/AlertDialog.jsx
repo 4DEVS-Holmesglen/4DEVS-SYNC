@@ -1,10 +1,29 @@
+// AlertDialog component
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Alert from "../Alert/Alert";
 import Button from "../Button/Button";
 
-// Styled components for overlay
+// Keyframes for animations
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const slideDown = keyframes`
+  from {
+    transform: translate(-50%, -60%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+`;
+
 const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -12,33 +31,24 @@ const Overlay = styled.div`
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-
   z-index: 999;
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")}; /* Changed to flex */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+  justify-content: center;
+  align-items: center;
+  animation: ${fadeIn} 0.3s ease-in-out;
 `;
 
 const DialogContainer = styled.div`
-  position: fixed; /* Change from relative to fixed */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
+  position: fixed;
+  top: 50%;
+  left: 50%;
   display: flex;
   flex-direction: row;
-  transform: translate(-50%, -50%); /* Center the container */
+  transform: translate(-50%, -50%);
   padding: 20px;
   border-radius: 10px;
   z-index: 1000;
-`;
-
-const CloseButton = styled.button`
-  align-items: self-end;
-  margin-bottom: 120px;
-  border: none;
-  background: none;
-  font-size: 30px;
-  cursor: pointer;
-  color: ${(props) => props.btncolor}; /* Dynamically set color from prop */
+  animation: ${slideDown} 0.3s ease-in-out;
 `;
 
 function AlertDialog({
@@ -49,7 +59,7 @@ function AlertDialog({
   buttonVariant,
   hoverColor,
   path,
-  btnColor, // Added btnColor to destructured props
+  btnColor,
   onClick,
   type,
 }) {
@@ -60,39 +70,36 @@ function AlertDialog({
   };
 
   const closeDialog = () => {
-    setIsOpen(false); // Set the isOpen state to false to close the dialog
+    setIsOpen(false);
   };
 
   return (
     <>
-      {/* Button to open the alert dialog */}
       <Button
         hoverColor={hoverColor}
         variant={buttonVariant}
         path={path}
         onClick={toggleDialog}
         type={type}
+        aria-label="Open dialog"
       >
         {children}
       </Button>
 
-      {/* Overlay for Alert */}
-      <Overlay isOpen={isOpen}>
-        <DialogContainer onClick={(e) => e.stopPropagation()}>
-          {/* Close button with dynamic btnColor */}
-
-          {/* Alert component inside the dialog */}
+      <Overlay isOpen={isOpen} onClick={closeDialog} aria-hidden={!isOpen}>
+        <DialogContainer
+          onClick={(e) => e.stopPropagation()}
+          role="dialog"
+          aria-labelledby="alert-title"
+          aria-describedby="alert-body"
+        >
           <Alert title={title} body={body} status={status} />
-          <CloseButton btncolor={btnColor} onClick={closeDialog}>
-            &times;
-          </CloseButton>
         </DialogContainer>
       </Overlay>
     </>
   );
 }
 
-// Prop type validation
 AlertDialog.propTypes = {
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
@@ -107,17 +114,13 @@ AlertDialog.propTypes = {
     "warningDark",
   ]).isRequired,
   children: PropTypes.string.isRequired,
-  btnColor: PropTypes.string.isRequired, // btnColor is required
-
-  isOpen: PropTypes.bool,
-  onClose: PropTypes.func.isRequired,
-  buttonVariant: PropTypes.oneOf(["default", "primary", "success", "warning"]), // Define available button variants
+  btnColor: PropTypes.string.isRequired,
+  buttonVariant: PropTypes.oneOf(["default", "primary", "success", "warning"]),
 };
 
-// Default props in case buttonVariant or btnColor is not provided
 AlertDialog.defaultProps = {
   buttonVariant: "default",
-  btnColor: "#000000", // Default color for the close button
+  btnColor: "#000000",
 };
 
 export default AlertDialog;
