@@ -40,7 +40,7 @@ Run either of these commands inside the terminal:
 
 | Name | Version |
 | :--------------------------------------------------------------------------------: | :-----------------------------------------------: |
-| [`@holmesdev/sync`](https://www.npmjs.com/package/sync-components) | [![NPM](https://img.shields.io/npm/v/:@holmesdev/sync)]()
+| [`@holmesdev/sync`](https://www.npmjs.com/package/sync-components) | [![NPM](https://img.shields.io/npm/v/:@holmesdev/sync/v/1.0.2)]()
 
 Install the latest package version if required:
 
@@ -275,6 +275,8 @@ Each component has an `aria-label` and `title` to meet basic accessibility stand
 
 ## License
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/4DEVS-Holmesglen/Sync-test/blob/main/MIT%20License)
+
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/4DEVS-Holmesglen/4DEVS-SYNC/blob/main/MIT%20License)
 
 Available for open-source consumption under MIT licensing. See [MIT License](https://github.com/4DEVS-Holmesglen/Sync-test/blob/main/MIT%20License) for more information.
