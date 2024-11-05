@@ -1,231 +1,194 @@
 <img src="./packages/src/assets/img/4DEVSLOGO.png" alt="4DEVSLogo" style="width:100%; height:300px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 3px 3px 5px #888;"> <br>
 
-# SYNC
+# SYNC COMPONENTS
 
-## Table
+Add some flair to your projects by trying our dazzling yet practical Button & Alert components! Built with user interactivity and accessibility in mind, choose from an array of themes/variant types pertaining to each level of action severity, along with customizable options to tailor and enhance the functionality of each component.
+
+Check out our [documentation site](https://sync-documentation.onrender.com/) for visuals of our components.
+
+
+## Table of Contents
 
 - [Installation](#installation)
 
-- [Examples](#example)
+- [Usage](#usage)
+
+- [Demo](#demo)
+
+- [Props](#props)
 
 - [Customization](#customization)
 
-- [About](#about)
-
-- [Demos](#demos)
-
 ## Installation
 
-To install, you can use [npm](https://www.npmjs.com/package/react-handy-modal) or [yarn](https://www.npmjs.com/package/react-handy-modal):
+Run either of these commands inside the terminal:
 
-- `npm install  ` or `yarn add `.
-
-```sh
-  $ npm install synch-components
-  $ yarn add synch-components
+```bash
+  $ npm install @holmesdev/sync
+  $ yarn add @holmesdev/sync
 ```
 
-## Packages
 
-You can install the latest version by using:
+> [!IMPORTANT]
+> [Styled-components](https://styled-components.com/docs/basics#installation) is the JavaScript CSS library used to build our components. To ensure that they work as intended, you will need to separately install `styled-components` within both the `devDependencies` & `peerDependencies` inside of your `package.json` upon installation of the package.
+>
+> You <ins>MUST</ins> also ensure that you are:
+> - Using React.js v18.3.1 or higher
+> - Using styled-components v6.1.13 or higher
+
+## Latest Package Version
+
 | Name | Version |
-| :-------------------------------------------------------------------------------- | :-----------------------------------------------: |
-| [`synch-components`](https://www.npmjs.com/package/synch-components) | [[1.0.1](https://www.npmjs.com/package/synch-components) ] |
+| :--------------------------------------------------------------------------------: | :-----------------------------------------------: |
+| [`@holmesdev/sync`](https://www.npmjs.com/package/sync-components) | [![NPM](https://img.shields.io/npm/v/:@holmesdev/sync)]()
 
-## Example
+Install the latest package version if required:
 
-Here is a simple example of synch-components being used in an app with some custom styles and focusable input elements within the modal content:
-
-## Button Component
-
-A customizable and responsive button component built with styled-components that supports different variants, type, and more.
-
+```bash
+  $ npm install @holmesdev/sync@latest
+  $ yarn add @holmesdev/sync@latest
+```
 ## Usage
 
+Import the components (together or separately, depending on usage) inside your project:
+
 ```js
-import { Button } from "./packages/src/components/Button/Button.jsx";
+  import { Button, Alert, AlertDialog } from "@holmesdev/sync";
 ```
 
-## Use as a component:
+### Button Component
+
+A `Button` that allows the user to trigger an action when clicked. It comes with a selection of themes/variants.
 
 ```js
-<div>
- <Button text='Click Me' variant= "default">
-   <Button text='Click Me' variant="primary">
-    <Button text='Click Me' variant= "success">
-     <Button text='Click Me' variant= "warning">
-</div>
-```
+import React, { useState } from 'react';
+import { Button } from "@holmesdev/sync";
 
-## Props
-
-<!-- Button Component -->
-
-The `Button` component accepts the following props:
-
-- `text` (string, required): The text to be displayed inside the button.
-
-- `onClick` (function, optional): A function to be executed when the button is clicked.
-
-- `variant` (enum, required): specifies the visual style of the button based on the theme or use case (e.g., primary, success, warning).
-
-- `type` (enum, required): Specifies the button type attribute, which affects the behavior of the button in forms.
-
-## Customization Options
-
-Here are the customization options for the modal:
-
-### Variant (Required):
-
-- default: A 4DEVS style button with a black background and gradient border.
-- primary: For primary actions.
-- success: For positive actions.
-- warning: For warning actions.
-
-## Alert Component
-
-A versatile Alert component designed with customizable styles, title and text. This component supports various visual themes, including light and dark modes, and can be used to display important messages, warnings, or success notifications.
-
-## Usage
-
-```js
-import { Alert } from "./packages/src/components/Alert/Alert.jsx";
-```
-
-## Use as a component:
-
-```js
-<div>
-  <Alert
-    title="Default!"
-    body="Your operation completed successfully."
-    type="default"
-  />
-
-  <Alert
-    title="Primary Alert!"
-    body="Your operation completed successfully."
-    type="primary"
-  />
-
-  <Alert
-    title="Success Alert!"
-    body="Your operation completed successfully."
-    type="success"
-  />
-
-  <Alert
-    title="Warning Alert!"
-    body="Your operation completed successfully."
-    type="warning"
-  />
-
-  <Alert
-    title="Default Dark!"
-    body="Your operation completed successfully."
-    type="defaultDark"
-  />
-
-  <Alert
-    title="Primary Dark!"
-    body="Your operation completed successfully."
-    type="primaryDark"
-  />
-
-  <Alert
-    title="Success Dark!"
-    body="Your operation completed successfully."
-    type="successDark"
-  />
-
-  <Alert
-    title="Warning Dark!"
-    body="There was an issue processing your request."
-    type="warningDark"
-  />
-</div>
-```
-
-## Props
-
-<!-- Alert Component -->
-
-The `Alert` component accepts the following props:
-
-- `title` (string, required): The title text to be displayed in the alert.
-- `body` (string, required): The main message body of the alert.
-- `type` (enum, required): Determines the visual theme of the alert. Can be one of "default", "primary", "success", "warning", "defaultDark", "primaryDark", "successDark", "warningDark".
-
-## Customization Options
-
-Here are the customization options for the modal:
-
-## Themes
-
-`Light Themes`
-
-- `default`: 4Devs theme with a colorful gradient border and white background.
-- `primary`: Blue-themed alert with a white background.
-- `success`: Green-themed alert for success messages with a white background.
-- `warning`: Red-themed alert for warnings with a white background.
-
-`Dark Themes`
-
-- `defaultDark`: 4Devs theme with a gradient border and black background.
-- `primaryDark`: Blue-themed alert with a black background.
-- `successDark`: Green-themed alert with a black background.
-- `warningDark`: Red-themed alert with a black background.
-
-## AlertDialog Component
-
-A quick and easy way to pop up an alert in your app. The AlertDialog uses a onClick Button to trigger an Alert within a styled modal.
-
-## Usage
-
-```js
-import { AlertDiglog } from "./packages/src/components/AlertDialog/AlertDialog.jsx";
-
-function AlertDialog({}) {
+function Button({children}) {
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDialog = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <>
-      <Button text="Click Me" variant="primary" onClick={toggleDialog} />
+      <Button
+        children
+        type="button"
+        text="OK"
+        variant="primary"
+        onClick
+      />
+    <>
+  );
+};
 
-      <AlertOverlay isOpen={isOpen} onClick={toggleDialog}>
-        <AlertContainer onClick={(e) => e.stopPropagation()}>
+export default Button;
+
+_________________________________________________
+
+//BUTTON VARIANT EXAMPLES:
+
+<div>
+ <Button text='Click Me' variant= "default">
+  <Button text='Confirm' variant="primary">
+    <Button text='Close' variant= "success">
+     <Button text='OK' variant= "warning">
+</div>
+```
+### Alert Component
+
+An `Alert` box that appears on the page with a status notification or an action request. It comes with a selection of themes/statuses.
+
+```js
+import React, { useState } from 'react';
+import { Alert, AlertDialog } from "@holmesdev/sync";
+
+function Alert({children}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDialog = () => {
+  setIsOpen(!isOpen);
+
+  // stopPropagation() stops an event from bubbling up any further up the DOM tree.
+  // Overlay allows the user to click outside of the box to close it.
+
+  return (
+    <>
+      <AlertOverlay isOpen={isOpen} onClick={toggleDialog}/>
+        <AlertContainer onClick={(e) => e.stopPropagation()}/>
           <Alert
-            title="Alert!!!!"
-            body="This is a alert—check it out! This is a alert—check it out!"
-            type="primary"
+            children
+            title="Confirm"
+            body="Please confirm the request."
+            status="primary"
           />
         </AlertContainer>
       </AlertOverlay>
-    </>
+    <>
   );
-}
+};
+
+export default Alert;
+
+____________________________________________________________________________________
+
+//ALERT STATUS EXAMPLES:
+
+<div>
+  <Alert
+    title="Warning!"
+    body="Critical error"
+    status="warning"
+  />
+  <Alert
+    title="Congrats!"
+    body="Your account has been created"
+    status="success"
+  />
+<Alert
+    title="Warning!"
+    body="Critical error"
+    status="warningDark"
+  />
+  <Alert
+    title="Congrats!"
+    body="Your account has been created"
+    status="successDark"
+  />
 ```
+### AlertDialog
 
-## How AlertDialog Works
-
-Button: When clicked, it toggles the visibility of the modal.
-Alert: Displays the title and body of the alert inside the modal.
-Overlay: Click outside the alert to close the modal.
-
-## Demos
-
-Example of how all component works together
+The role of `AlertDialog` is to "link" the `Alert` & `Button` components together, as well as toggling the visibility of the `Alert` on the page.
 
 ```js
-import { Alert } from "./packages/src/components/Alert/Alert.jsx";
-import { AlertDialog } from "./packages/src/components/AlertDialog/AlertDialog.jsx";
-import { Button } from "./packages/src/components/Button/Button.jsx";
+  const toggleDialog = () => {
+    setIsOpen(!isOpen);
+  };
 
-const Sample = () => {
+  // stopPropagation() stops an event from bubbling up any further up the DOM tree.
+  // Overlay allows the user to click outside of the box to close it.
+
+  return (
+    <>
+      <Overlay isOpen={isOpen} onClick={toggleDialog}>
+        <Container onClick={(e) => e.stopPropagation()}>
+          <Alert
+            title="Your account will be deleted permanently!"
+            body="Are you sure you want to proceed?"
+            status="warning"
+          />
+        </Container>
+      </Overlay>
+    </>
+  );
+```
+## Demo
+
+Here's a basic demonstration of how all of our components work together:
+
+```js
+import React, { useState } from 'react';
+import { Button, Alert, AlertDialog } from "@holmesdev/sync";
+
+function Example({children}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDialog = () => {
@@ -234,14 +197,20 @@ const Sample = () => {
 
   return (
     <>
-      <Button text="Click Me" variant="primary" onClick={toggleDialog} />
+      <Button
+        children
+        type="button"
+        text="Yes, delete my account"
+        variant="warning"
+        onClick={toggleDialog}
+      />
 
       <AlertOverlay isOpen={isOpen} onClick={toggleDialog}>
         <AlertContainer onClick={(e) => e.stopPropagation()}>
           <Alert
-            title="Alert!!!!"
-            body="This is an alert—check it out!"
-            type="primary"
+            title="Your account will be deleted permanently!"
+            body="Are you sure you want to proceed?"
+            status="warning"
           />
         </AlertContainer>
       </AlertOverlay>
@@ -249,9 +218,63 @@ const Sample = () => {
   );
 };
 
-export default Sample;
+export default Example;
 ```
+## Props
 
-## Contributors
+### Button
 
-Thanks goes to these wonderful people.......
+- `text` (string, <ins>required</ins>): Action text displayed inside the `Button`
+- `children` (string, <ins>required</ins>): Specifies the `Button`'s child elements
+- `variant` (enum, <ins>required</ins>): Specifies the visual theme – ["default", "primary", "success", "warning"]
+- `hoverColor` (string, optional): Specifies the `Button`'s color when it is hovered over with the mouse
+- `onClick` (function, optional): An event handler that executes a function when the Button is clicked
+- `type` (enum, optional): Specifies the action that will occur when clicked – ["button", "submit", "reset"]
+
+### Alert
+
+- `title` (string, <ins>required</ins>): Title text displayed inside the `Alert`
+- `body` (string, <ins>required</ins>): Body text displayed inside the `Alert`
+- `status` (enum, <ins>required</ins>): Specifies the visual theme – ["default", "primary", "success", "warning","defaultDark", "primaryDark", "successDark", "warningDark"]
+
+### AlertDialog
+
+- `title` (string, <ins>required</ins>): Title text displayed inside the component
+- `body` (string, <ins>required</ins>): Body text displayed inside the component
+- `children` (string, <ins>required</ins>): Specifies the child elements of the component
+- `status` (enum, <ins>required</ins>): Specifies the visual theme – ["default", "primary", "success", "warning","defaultDark", "primaryDark", "successDark", "warningDark"]
+- `btnColor` (string, <ins>required</ins>): Specifies the `Button`'s color
+- `buttonVariant` (enum, <ins>required</ins>): Specifies the `Button`'s variant – ["default", "primary", "success", "warning"]
+- `isOpen` (boolean, optional): If “true”, the component is open – If "false", the component isn't open
+- `onClose` (function, optional): Called when the component is closed
+
+## Themes
+
+### Light Themes
+
+- `default`: Gradient border with a white background
+- `primary`: Blue border with a white background
+- `success`: Green border with a white background
+- `warning`: Red border with a white background
+
+### Dark Themes
+
+- `defaultDark`: Gradient border with a black background
+- `primaryDark`: Blue border with a black background
+- `successDark`: Green border with a black background
+- `warningDark`: Red border with a black background
+
+## Customization
+
+- `title` & `body` text is customizable for each component
+- `variant` & `status` need to be specified inside your code, and no further CSS customization is necessary
+
+## Accessibility
+
+Each component has an `aria-label` and `title` to meet basic accessibility standards.
+
+## License
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/4DEVS-Holmesglen/Sync-test/blob/main/MIT%20License)
+
+Available for open-source consumption under MIT licensing. See [MIT License](https://github.com/4DEVS-Holmesglen/Sync-test/blob/main/MIT%20License) for more information.
