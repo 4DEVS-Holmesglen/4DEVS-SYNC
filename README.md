@@ -1,5 +1,3 @@
-<img src="./packages/src/assets/img/4DEVSLOGO.png" alt="4DEVSLogo" style="width:100%; height:300px; border: 1px solid #ccc; border-radius: 10px; box-shadow: 3px 3px 5px #888;"> <br>
-
 # SYNC COMPONENTS
 
 Add some flair to your projects by trying our dazzling yet practical Button & Alert components! Built with user interactivity and accessibility in mind, choose from an array of themes/variant types pertaining to each level of action severity, along with customizable options to tailor and enhance the functionality of each component.
