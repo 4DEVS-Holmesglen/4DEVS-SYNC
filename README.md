@@ -4,7 +4,6 @@ Add some flair to your projects by trying our dazzling yet practical Button & Al
 
 Check out our [documentation site](https://sync-documentation.onrender.com/) for visuals of our components.
 
-
 ## Table of Contents
 
 - [Installation](#installation)
@@ -26,19 +25,18 @@ Run either of these commands inside the terminal:
   $ yarn add @holmesdev/sync
 ```
 
-
-> [!IMPORTANT]
-> [Styled-components](https://styled-components.com/docs/basics#installation) is the JavaScript CSS library used to build our components. To ensure that they work as intended, you will need to separately install `styled-components` within both the `devDependencies` & `peerDependencies` inside of your `package.json` upon installation of the package.
+> [!IMPORTANT] > [Styled-components](https://styled-components.com/docs/basics#installation) is the JavaScript CSS library used to build our components. To ensure that they work as intended, you will need to separately install `styled-components` within both the `devDependencies` & `peerDependencies` inside of your `package.json` upon installation of the package.
 >
 > You <ins>MUST</ins> also ensure that you are:
+>
 > - Using React.js v18.3.1 or higher
 > - Using styled-components v6.1.13 or higher
 
 ## Latest Package Version
 
-| Name | Version |
-| :--------------------------------------------------------------------------------: | :-----------------------------------------------: |
-| [`@holmesdev/sync`](https://www.npmjs.com/package/sync-components) | [![NPM](https://img.shields.io/npm/v/:@holmesdev/sync/v/1.0.2)]()
+|                                Name                                |                              Version                              |
+| :----------------------------------------------------------------: | :---------------------------------------------------------------: |
+| [`@holmesdev/sync`](https://www.npmjs.com/package/sync-components) | [![NPM](https://img.shields.io/npm/v/:@holmesdev/sync/v/1.0.2)]() |
 
 Install the latest package version if required:
 
@@ -46,12 +44,13 @@ Install the latest package version if required:
   $ npm install @holmesdev/sync@latest
   $ yarn add @holmesdev/sync@latest
 ```
+
 ## Usage
 
 Import the components (together or separately, depending on usage) inside your project:
 
 ```js
-  import { Button, Alert, AlertDialog } from "@holmesdev/sync";
+import { Button, Alert, AlertDialog } from "@holmesdev/sync";
 ```
 
 ### Button Component
@@ -91,6 +90,7 @@ _________________________________________________
      <Button text='OK' variant= "warning">
 </div>
 ```
+
 ### Alert Component
 
 An `Alert` box that appears on the page with a status notification or an action request. It comes with a selection of themes/statuses.
@@ -152,41 +152,43 @@ ________________________________________________________________________________
     status="successDark"
   />
 ```
+
 ### AlertDialog
 
 The role of `AlertDialog` is to "link" the `Alert` & `Button` components together, as well as toggling the visibility of the `Alert` on the page.
 
 ```js
-  const toggleDialog = () => {
-    setIsOpen(!isOpen);
-  };
+const toggleDialog = () => {
+  setIsOpen(!isOpen);
+};
 
-  // stopPropagation() stops an event from bubbling up any further up the DOM tree.
-  // Overlay allows the user to click outside of the box to close it.
+// stopPropagation() stops an event from bubbling up any further up the DOM tree.
+// Overlay allows the user to click outside of the box to close it.
 
-  return (
-    <>
-      <Overlay isOpen={isOpen} onClick={toggleDialog}>
-        <Container onClick={(e) => e.stopPropagation()}>
-          <Alert
-            title="Your account will be deleted permanently!"
-            body="Are you sure you want to proceed?"
-            status="warning"
-          />
-        </Container>
-      </Overlay>
-    </>
-  );
+return (
+  <>
+    <Overlay isOpen={isOpen} onClick={toggleDialog}>
+      <Container onClick={(e) => e.stopPropagation()}>
+        <Alert
+          title="Your account will be deleted permanently!"
+          body="Are you sure you want to proceed?"
+          status="warning"
+        />
+      </Container>
+    </Overlay>
+  </>
+);
 ```
+
 ## Demo
 
 Here's a basic demonstration of how all of our components work together:
 
 ```js
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button, Alert, AlertDialog } from "@holmesdev/sync";
 
-function Example({children}) {
+function Example({ children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDialog = () => {
@@ -214,10 +216,11 @@ function Example({children}) {
       </AlertOverlay>
     </>
   );
-};
+}
 
 export default Example;
 ```
+
 ## Props
 
 ### Button
@@ -272,8 +275,6 @@ export default Example;
 Each component has an `aria-label` and `title` to meet basic accessibility standards.
 
 ## License
-
-
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/4DEVS-Holmesglen/4DEVS-SYNC/blob/main/MIT%20License)
 

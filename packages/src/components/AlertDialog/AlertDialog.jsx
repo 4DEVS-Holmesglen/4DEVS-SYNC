@@ -24,6 +24,16 @@ const slideDown = keyframes`
   }
 `;
 
+const CloseButton = styled.button`
+  align-items: self-end;
+  margin-bottom: 120px;
+  border: none;
+  background: none;
+  font-size: 40px;
+  cursor: pointer;
+  color: ${(props) => props.btncolor};
+`;
+
 const Overlay = styled.div`
   position: fixed;
   top: 0;
@@ -94,6 +104,9 @@ function AlertDialog({
           aria-describedby="alert-body"
         >
           <Alert title={title} body={body} status={status} />
+          <CloseButton btncolor={btnColor} onClick={closeDialog}>
+            &times;
+          </CloseButton>
         </DialogContainer>
       </Overlay>
     </>
