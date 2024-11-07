@@ -4,16 +4,11 @@ Add some flair to your projects by trying our dazzling yet practical Button & Al
 
 Check out our [documentation site](https://sync-documentation.onrender.com/) for visuals of our components.
 
-## Table of Contents
+## Table of Contents (Sticky)
 
 - [Installation](#installation)
-
 - [Usage](#usage)
-
-- [Demo](#demo)
-
 - [Props](#props)
-
 - [Customization](#customization)
 
 ## Installation
@@ -58,37 +53,35 @@ import { Button, Alert, AlertDialog } from "@holmesdev/sync";
 A `Button` that allows the user to trigger an action when clicked. It comes with a selection of themes/variants.
 
 ```js
-import React, { useState } from 'react';
-import { Button } from "@holmesdev/sync";
+import Button from 'sync-components';
 
-function Button({children}) {
-  const [isOpen, setIsOpen] = useState(false);
+<Button
+  variant="primary"
+  hoverColor="#1f56ec"
+  path="https://sync-documentation.onrender.com/"
+>
+  Click Me
+</Button>
 
-  return (
-    <>
-      <Button
-        children
-        type="button"
-        text="OK"
-        variant="primary"
-        onClick
-      />
-    <>
-  );
-};
 
-export default Button;
+____________________________________________________________________________________
+
+//BUTTON STATUS EXAMPLES:
+
+<Button
+  variant="success"
+  hoverColor="#1cd560"
+  type = "submit"
+>
+  Success Action
+</Button>
+
+
+
 
 _________________________________________________
 
-//BUTTON VARIANT EXAMPLES:
 
-<div>
- <Button text='Click Me' variant= "default">
-  <Button text='Confirm' variant="primary">
-    <Button text='Close' variant= "success">
-     <Button text='OK' variant= "warning">
-</div>
 ```
 
 ### Alert Component
@@ -96,61 +89,43 @@ _________________________________________________
 An `Alert` box that appears on the page with a status notification or an action request. It comes with a selection of themes/statuses.
 
 ```js
-import React, { useState } from 'react';
-import { Alert, AlertDialog } from "@holmesdev/sync";
+import Alert from 'sync-components';
 
-function Alert({children}) {
-  const [isOpen, setIsOpen] = useState(false);
+<Alert
+  title="Success!"
+  body="Your action was completed successfully."
+  status="success"
+/>
 
-  const toggleDialog = () => {
-  setIsOpen(!isOpen);
-
-  // stopPropagation() stops an event from bubbling up any further up the DOM tree.
-  // Overlay allows the user to click outside of the box to close it.
-
-  return (
-    <>
-      <AlertOverlay isOpen={isOpen} onClick={toggleDialog}/>
-        <AlertContainer onClick={(e) => e.stopPropagation()}/>
-          <Alert
-            children
-            title="Confirm"
-            body="Please confirm the request."
-            status="primary"
-          />
-        </AlertContainer>
-      </AlertOverlay>
-    <>
-  );
-};
-
-export default Alert;
 
 ____________________________________________________________________________________
 
 //ALERT STATUS EXAMPLES:
 
 <div>
-  <Alert
-    title="Warning!"
-    body="Critical error"
-    status="warning"
-  />
-  <Alert
-    title="Congrats!"
-    body="Your account has been created"
-    status="success"
-  />
+
+// Success Alert
 <Alert
-    title="Warning!"
-    body="Critical error"
-    status="warningDark"
-  />
-  <Alert
-    title="Congrats!"
-    body="Your account has been created"
-    status="successDark"
-  />
+  title="Success!"
+  body="Your action was completed successfully."
+  status="success"
+/>
+
+// Error Alert
+<Alert
+  title="Error!"
+  body="Something went wrong. Please try again."
+  status="error"
+/>
+
+// Warning Alert
+<Alert
+  title="Warning!"
+  body="Be careful! This action could have consequences."
+  status="warning"
+/>
+
+
 ```
 
 ### AlertDialog
@@ -158,96 +133,76 @@ ________________________________________________________________________________
 The role of `AlertDialog` is to "link" the `Alert` & `Button` components together, as well as toggling the visibility of the `Alert` on the page.
 
 ```js
-const toggleDialog = () => {
-  setIsOpen(!isOpen);
-};
+import AlertDialog from "sync-components";
 
-// stopPropagation() stops an event from bubbling up any further up the DOM tree.
-// Overlay allows the user to click outside of the box to close it.
 
-return (
-  <>
-    <Overlay isOpen={isOpen} onClick={toggleDialog}>
-      <Container onClick={(e) => e.stopPropagation()}>
-        <Alert
-          title="Your account will be deleted permanently!"
-          body="Are you sure you want to proceed?"
-          status="warning"
-        />
-      </Container>
-    </Overlay>
-  </>
-);
-```
+<AlertDialog
+  title="Success!"
+  body="Your action was completed successfully."
+  status="success"
+  buttonVariant="success"
+  btnColor="#28a745"
+  hoverColor="#218838"
+>
+  Show Success
+</AlertDialog>
 
-## Demo
 
-Here's a basic demonstration of how all of our components work together:
+____________________________________________________________________________________
 
-```js
-import React, { useState } from "react";
-import { Button, Alert, AlertDialog } from "@holmesdev/sync";
+//ALERTDIALOG STATUS EXAMPLES:
 
-function Example({ children }) {
-  const [isOpen, setIsOpen] = useState(false);
+<AlertDialog
+  title="Error"
+  body="Something went wrong. Please try again."
+  status="danger"
+  buttonVariant="warning"
+  btnColor="#dc3545"
+  hoverColor="#c82333"
+>
+  Show Error
+</AlertDialog>
 
-  const toggleDialog = () => {
-    setIsOpen(!isOpen);
-  };
 
-  return (
-    <>
-      <Button
-        children
-        type="button"
-        text="Yes, delete my account"
-        variant="warning"
-        onClick={toggleDialog}
-      />
 
-      <AlertOverlay isOpen={isOpen} onClick={toggleDialog}>
-        <AlertContainer onClick={(e) => e.stopPropagation()}>
-          <Alert
-            title="Your account will be deleted permanently!"
-            body="Are you sure you want to proceed?"
-            status="warning"
-          />
-        </AlertContainer>
-      </AlertOverlay>
-    </>
-  );
-}
-
-export default Example;
 ```
 
 ## Props
 
-### Button
+### Button Component Props
 
-- `text` (string, <ins>required</ins>): Action text displayed inside the `Button`
-- `children` (string, <ins>required</ins>): Specifies the `Button`'s child elements
-- `variant` (enum, <ins>required</ins>): Specifies the visual theme – ["default", "primary", "success", "warning"]
-- `hoverColor` (string, optional): Specifies the `Button`'s color when it is hovered over with the mouse
-- `onClick` (function, optional): An event handler that executes a function when the Button is clicked
-- `type` (enum, optional): Specifies the action that will occur when clicked – ["button", "submit", "reset"]
+| Prop         | Type       | Required | Description                                                                       |
+| ------------ | ---------- | -------- | --------------------------------------------------------------------------------- |
+| `children`   | `string`   | Yes      | Text or content inside the button.                                                |
+| `variant`    | `string`   | No       | Button style. Options: `default`, `primary`, `success`, `warning`.                |
+| `hoverColor` | `string`   | No       | Color displayed on hover.                                                         |
+| `path`       | `string`   | No       | URL path if the button is used as a link.                                         |
+| `onClick`    | `function` | Yes      | Callback function for the button click event.                                     |
+| `type`       | `string`   | No       | Button type attribute. Options: `button`, `submit`, `reset`. Default is `button`. |
 
-### Alert
+### Alert Component Props
 
-- `title` (string, <ins>required</ins>): Title text displayed inside the `Alert`
-- `body` (string, <ins>required</ins>): Body text displayed inside the `Alert`
-- `status` (enum, <ins>required</ins>): Specifies the visual theme – ["default", "primary", "success", "warning","defaultDark", "primaryDark", "successDark", "warningDark"]
+| Prop     | Type     | Required | Description                                                                                                                    |
+| -------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `title`  | `string` | Yes      | Content to be displayed inside the alert.                                                                                      |
+| `status` | `string` | Yes      | Alert type. Options: `default`, `primary`, `success`, `warning`, `defaultDark`, `primaryDark`, `successDark`, `warningDark`, . |
+| `body`   | `string` | Yes      | Body text displayed inside the `Alert`                                                                                         |
 
-### AlertDialog
+---
 
-- `title` (string, <ins>required</ins>): Title text displayed inside the component
-- `body` (string, <ins>required</ins>): Body text displayed inside the component
-- `children` (string, <ins>required</ins>): Specifies the child elements of the component
-- `status` (enum, <ins>required</ins>): Specifies the visual theme – ["default", "primary", "success", "warning","defaultDark", "primaryDark", "successDark", "warningDark"]
-- `btnColor` (string, <ins>required</ins>): Specifies the `Button`'s color
-- `buttonVariant` (enum, <ins>required</ins>): Specifies the `Button`'s variant – ["default", "primary", "success", "warning"]
-- `isOpen` (boolean, optional): If “true”, the component is open – If "false", the component isn't open
-- `onClose` (function, optional): Called when the component is closed
+### AlertDialog Component Props
+
+| Prop            | Type       | Required | Description                                                                                                                                      |
+| --------------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `title`         | `string`   | Yes      | Title text displayed inside the component.                                                                                                       |
+| `body`          | `string`   | Yes      | Body text displayed inside the component.                                                                                                        |
+| `children`      | `string`   | Yes      | The child elements of the button component.                                                                                                      |
+| `btnColor`      | `string`   | Yes      | Specifies the `X close button`'s color.                                                                                                          |
+| `status`        | `enum`     | Yes      | Specifies the visual theme – Options: `["default", "primary", "success", "warning", "defaultDark", "primaryDark", "successDark", "warningDark"]` |
+| `buttonVariant` | `enum`     | Yes      | Specifies the `Button`'s variant – Options: `["default", "primary", "success", "warning"]`                                                       |
+| `isOpen`        | `boolean`  | No       | If `true`, the component is open; if `false`, the component isn't open.                                                                          |
+| `onClose`       | `function` | No       | Called when the component is closed.                                                                                                             |
+| `ariaLabel`     | `string`   | No       | Accessibility label for screen readers, describing the purpose of the dialog.                                                                    |
 
 ## Themes
 
@@ -272,7 +227,10 @@ export default Example;
 
 ## Accessibility
 
-Each component has an `aria-label` and `title` to meet basic accessibility standards.
+## Accessibility
+
+- [ ] ARIA attributes implemented
+- [ ] Color contrast compliant
 
 ## License
 
