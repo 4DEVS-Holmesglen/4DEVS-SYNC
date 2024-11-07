@@ -54,7 +54,7 @@ import { Button, Alert, AlertDialog } from "@holmesdev/sync";
 A `Button` that allows the user to trigger an action when clicked. It comes with a selection of themes/variants.
 
 ```js
-import Button from 'sync-components';
+import Button from "@holmesdev/sync";
 
 <Button
   variant="primary"
@@ -81,7 +81,7 @@ _________________________________________________
 An `Alert` box that appears on the page with a status notification or an action request. It comes with a selection of themes/statuses.
 
 ```js
-import Alert from 'sync-components';
+import Alert from "@holmesdev/sync";
 
 <Alert
   title="Success!"
@@ -121,7 +121,7 @@ ________________________________________________
 The role of `AlertDialog` is to "link" the `Alert` & `Button` components together, as well as toggling the visibility of the `Alert` on the page.
 
 ```js
-import AlertDialog from "sync-components";
+import AlertDialog from "@holmesdev/sync";
 
 <AlertDialog
   title="Success!"
