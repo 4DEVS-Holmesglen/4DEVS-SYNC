@@ -203,7 +203,7 @@ ________________________________________________
 ## Customization
 
 - `title` & `body` text is customizable for each component
-- `variant` & `status` need to be specified inside your code, with no further CSS customization being necessary
+- `variant` & `status` just need to be specified, with no further CSS customization being necessary
 
 ## Accessibility
 
