@@ -29,9 +29,9 @@ Run either of these commands inside the terminal:
 
 ## Latest Package Version
 
-|                                Name                                |                              Version                              |
-| :----------------------------------------------------------------: | :---------------------------------------------------------------: |
-| [`@holmesdev/sync`](https://www.npmjs.com/package/sync-components) | [![NPM](https://img.shields.io/npm/v/:@holmesdev/sync/v/1.0.2)]() |
+|                                Name                                |                         Version                          |
+| :----------------------------------------------------------------: | :------------------------------------------------------: |
+| [`@holmesdev/sync`](https://www.npmjs.com/package/@holmesdev/sync) | ![NPM](https://img.shields.io/npm/v/@holmesdev/sync.svg) |
 
 Install the latest package version if required:
 
@@ -229,8 +229,8 @@ ________________________________________________________________________________
 
 ## Accessibility
 
-- [ ] ARIA attributes implemented
-- [ ] Color contrast compliant
+- ARIA attributes implemented
+- Color contrast compliant
 
 ## License
 
