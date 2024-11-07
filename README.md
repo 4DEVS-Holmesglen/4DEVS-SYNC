@@ -40,7 +40,6 @@ Install the latest package version if required:
   $ npm install @holmesdev/sync@latest
   $ yarn add @holmesdev/sync@latest
 ```
-
 ## Usage
 
 Import the components (together or separately, depending on usage) inside your project:
@@ -48,7 +47,6 @@ Import the components (together or separately, depending on usage) inside your p
 ```js
 import { Button, Alert, AlertDialog } from "@holmesdev/sync";
 ```
-
 ### Button Component
 
 A `Button` that allows the user to trigger an action when clicked. It comes with a selection of themes/variants.
@@ -153,22 +151,22 @@ ________________________________________________
 
 ### Button Component
 
-| Prop         | Type       | Required | Description                                                                       |
-| ------------ | ---------- | -------- | --------------------------------------------------------------------------------- |
-| `children`   | `string`   | Yes      | Text or content inside the button.                                                |
-| `variant`    | `string`   | No       | Button style. Options: `default`, `primary`, `success`, `warning`.                |
-| `hoverColor` | `string`   | No       | Color displayed on hover.                                                         |
-| `path`       | `string`   | No       | URL path if the button is used as a link.                                         |
-| `type`       | `string`   | No       | Button type attribute. Options: `button`, `submit`, `reset`. Default is `button`. |
-| `onClick`    | `function` | Yes      | Callback function for the button click event.                                     |
+| Prop         | Type       | Required | Description                                                                         |
+| ------------ | ---------- | -------- | ---------------------------------------------------------------------------------   |
+| `children`   | `string`   | Yes      | Text or content inside the `Button`.                                                |
+| `variant`    | `string`   | No       | `Button` style. Options: `default`, `primary`, `success`, `warning`.                |
+| `hoverColor` | `string`   | No       | Color displayed on hover.                                                           |
+| `path`       | `string`   | No       | URL path if the button is used as a link.                                           |
+| `type`       | `string`   | No       | `Button` type attribute. Options: `button`, `submit`, `reset`. Default is `button`. |
+| `onClick`    | `function` | Yes      | Callback function for the button click event.                                       |
 
 ### Alert Component
 
-| Prop     | Type     | Required | Description                                                                                                                    |
-| -------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `title`  | `string` | Yes      | Content to be displayed inside the alert.                                                                                      |
-| `status` | `string` | Yes      | Alert type. Options: `default`, `primary`, `success`, `warning`, `defaultDark`, `primaryDark`, `successDark`, `warningDark`.   |
-| `body`   | `string` | Yes      | Body text displayed inside the `Alert`.                                                                                        |
+| Prop     | Type     | Required | Description                                                                                                                  |
+| -------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `title`  | `string` | Yes      | Content to be displayed inside the `Alert`.                                                                                  |
+| `status` | `string` | Yes      | Alert type. Options: `default`, `primary`, `success`, `warning`, `defaultDark`, `primaryDark`, `successDark`, `warningDark`. |
+| `body`   | `string` | Yes      | Body text displayed inside the `Alert`.                                                                                      |
 
 ### AlertDialog Component
 
@@ -203,7 +201,7 @@ ________________________________________________
 ## Customization
 
 - `title` & `body` text is customizable for each component
-- `variant` & `status` just need to be specified, with no further CSS customization being necessary
+- `variant` & `status` need to be specified, with no further CSS customization being necessary
 
 ## Accessibility
 
