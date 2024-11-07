@@ -20,7 +20,8 @@ Run either of these commands inside the terminal:
   $ yarn add @holmesdev/sync
 ```
 
-> [!IMPORTANT] > [Styled-components](https://styled-components.com/docs/basics#installation) is the JavaScript CSS library used to build our components. To ensure that they work as intended, you will need to separately install `styled-components` within both the `devDependencies` & `peerDependencies` inside of your `package.json` upon installation of the package.
+> [!IMPORTANT]
+> [Styled-components](https://styled-components.com/docs/basics#installation) is the JavaScript CSS library used to build our components. To ensure that they work as intended, you will need to separately install `styled-components` within both the `devDependencies` & `peerDependencies` inside of your `package.json` upon installation of the package.
 >
 > You <ins>MUST</ins> also ensure that you are:
 >
@@ -39,7 +40,6 @@ Install the latest package version if required:
   $ npm install @holmesdev/sync@latest
   $ yarn add @holmesdev/sync@latest
 ```
-
 ## Usage
 
 Import the components (together or separately, depending on usage) inside your project:
@@ -47,13 +47,12 @@ Import the components (together or separately, depending on usage) inside your p
 ```js
 import { Button, Alert, AlertDialog } from "@holmesdev/sync";
 ```
-
 ### Button Component
 
 A `Button` that allows the user to trigger an action when clicked. It comes with a selection of themes/variants.
 
 ```js
-import Button from 'sync-components';
+import Button from "@holmesdev/sync";
 
 <Button
   variant="primary"
@@ -63,8 +62,7 @@ import Button from 'sync-components';
   Click Me
 </Button>
 
-
-____________________________________________________________________________________
+_________________________________________________
 
 //BUTTON STATUS EXAMPLES:
 
@@ -75,21 +73,13 @@ ________________________________________________________________________________
 >
   Success Action
 </Button>
-
-
-
-
-_________________________________________________
-
-
 ```
-
 ### Alert Component
 
 An `Alert` box that appears on the page with a status notification or an action request. It comes with a selection of themes/statuses.
 
 ```js
-import Alert from 'sync-components';
+import Alert from "@holmesdev/sync";
 
 <Alert
   title="Success!"
@@ -97,8 +87,7 @@ import Alert from 'sync-components';
   status="success"
 />
 
-
-____________________________________________________________________________________
+________________________________________________
 
 //ALERT STATUS EXAMPLES:
 
@@ -124,17 +113,13 @@ ________________________________________________________________________________
   body="Be careful! This action could have consequences."
   status="warning"
 />
-
-
 ```
-
-### AlertDialog
+### AlertDialog Component
 
 The role of `AlertDialog` is to "link" the `Alert` & `Button` components together, as well as toggling the visibility of the `Alert` on the page.
 
 ```js
-import AlertDialog from "sync-components";
-
+import AlertDialog from "@holmesdev/sync";
 
 <AlertDialog
   title="Success!"
@@ -147,8 +132,7 @@ import AlertDialog from "sync-components";
   Show Success
 </AlertDialog>
 
-
-____________________________________________________________________________________
+________________________________________________
 
 //ALERTDIALOG STATUS EXAMPLES:
 
@@ -162,47 +146,41 @@ ________________________________________________________________________________
 >
   Show Error
 </AlertDialog>
-
-
-
 ```
-
 ## Props
 
-### Button Component Props
+### Button Component
 
-| Prop         | Type       | Required | Description                                                                       |
-| ------------ | ---------- | -------- | --------------------------------------------------------------------------------- |
-| `children`   | `string`   | Yes      | Text or content inside the button.                                                |
-| `variant`    | `string`   | No       | Button style. Options: `default`, `primary`, `success`, `warning`.                |
-| `hoverColor` | `string`   | No       | Color displayed on hover.                                                         |
-| `path`       | `string`   | No       | URL path if the button is used as a link.                                         |
-| `onClick`    | `function` | Yes      | Callback function for the button click event.                                     |
-| `type`       | `string`   | No       | Button type attribute. Options: `button`, `submit`, `reset`. Default is `button`. |
+| Prop         | Type       | Required | Description                                                                         |
+| :----------- | :--------- | :------- | :---------------------------------------------------------------------------------  |
+| `children`   | `string`   | Yes      | Text or content inside the `Button`.                                                |
+| `variant`    | `string`   | No       | `Button` style. Options: `default`, `primary`, `success`, `warning`.                |
+| `hoverColor` | `string`   | No       | Color displayed on hover.                                                           |
+| `path`       | `string`   | No       | URL path if the button is used as a link.                                           |
+| `type`       | `string`   | No       | `Button` type attribute. Options: `button`, `submit`, `reset`. Default is `button`. |
+| `onClick`    | `function` | Yes      | Callback function for the button click event.                                       |
 
-### Alert Component Props
+### Alert Component
 
-| Prop     | Type     | Required | Description                                                                                                                    |
-| -------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `title`  | `string` | Yes      | Content to be displayed inside the alert.                                                                                      |
-| `status` | `string` | Yes      | Alert type. Options: `default`, `primary`, `success`, `warning`, `defaultDark`, `primaryDark`, `successDark`, `warningDark`, . |
-| `body`   | `string` | Yes      | Body text displayed inside the `Alert`                                                                                         |
+| Prop     | Type     | Required | Description                                                                                                                  |
+| :------- | :------- | :------- | :--------------------------------------------------------------------------------------------------------------------------- |
+| `title`  | `string` | Yes      | Content to be displayed inside the `Alert`.                                                                                  |
+| `status` | `string` | Yes      | Alert type. Options: `default`, `primary`, `success`, `warning`, `defaultDark`, `primaryDark`, `successDark`, `warningDark`. |
+| `body`   | `string` | Yes      | Body text displayed inside the `Alert`.                                                                                      |
 
----
-
-### AlertDialog Component Props
+### AlertDialog Component
 
 | Prop            | Type       | Required | Description                                                                                                                                      |
-| --------------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| :-------------- | :--------- | :------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `title`         | `string`   | Yes      | Title text displayed inside the component.                                                                                                       |
 | `body`          | `string`   | Yes      | Body text displayed inside the component.                                                                                                        |
 | `children`      | `string`   | Yes      | The child elements of the button component.                                                                                                      |
 | `btnColor`      | `string`   | Yes      | Specifies the `X close button`'s color.                                                                                                          |
-| `status`        | `enum`     | Yes      | Specifies the visual theme – Options: `["default", "primary", "success", "warning", "defaultDark", "primaryDark", "successDark", "warningDark"]` |
-| `buttonVariant` | `enum`     | Yes      | Specifies the `Button`'s variant – Options: `["default", "primary", "success", "warning"]`                                                       |
+| `ariaLabel`     | `string`   | No       | Accessibility label for screen readers, describing the purpose of the dialog.                                                                    |
+| `status`        | `enum`     | Yes      | Specifies the visual theme – Options: `["default", "primary", "success", "warning", "defaultDark", "primaryDark", "successDark", "warningDark"]`.|
+| `buttonVariant` | `enum`     | Yes      | Specifies the `Button`'s variant – Options: `["default", "primary", "success", "warning"]`.                                                      |
 | `isOpen`        | `boolean`  | No       | If `true`, the component is open; if `false`, the component isn't open.                                                                          |
 | `onClose`       | `function` | No       | Called when the component is closed.                                                                                                             |
-| `ariaLabel`     | `string`   | No       | Accessibility label for screen readers, describing the purpose of the dialog.                                                                    |
 
 ## Themes
 
@@ -223,9 +201,7 @@ ________________________________________________________________________________
 ## Customization
 
 - `title` & `body` text is customizable for each component
-- `variant` & `status` need to be specified inside your code, and no further CSS customization is necessary
-
-## Accessibility
+- `variant` & `status` need to be specified, with no further CSS customization being necessary
 
 ## Accessibility
 
