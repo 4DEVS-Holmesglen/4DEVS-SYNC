@@ -116,7 +116,7 @@ ________________________________________________
   status="warning"
 />
 ```
-### AlertDialog
+### AlertDialog Component
 
 The role of `AlertDialog` is to "link" the `Alert` & `Button` components together, as well as toggling the visibility of the `Alert` on the page.
 
@@ -151,7 +151,7 @@ ________________________________________________
 ```
 ## Props
 
-### Button Component Props
+### Button Component
 
 | Prop         | Type       | Required | Description                                                                       |
 | ------------ | ---------- | -------- | --------------------------------------------------------------------------------- |
@@ -162,7 +162,7 @@ ________________________________________________
 | `type`       | `string`   | No       | Button type attribute. Options: `button`, `submit`, `reset`. Default is `button`. |
 | `onClick`    | `function` | Yes      | Callback function for the button click event.                                     |
 
-### Alert Component Props
+### Alert Component
 
 | Prop     | Type     | Required | Description                                                                                                                    |
 | -------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -170,7 +170,7 @@ ________________________________________________
 | `status` | `string` | Yes      | Alert type. Options: `default`, `primary`, `success`, `warning`, `defaultDark`, `primaryDark`, `successDark`, `warningDark`.   |
 | `body`   | `string` | Yes      | Body text displayed inside the `Alert`.                                                                                        |
 
-### AlertDialog Component Props
+### AlertDialog Component
 
 | Prop            | Type       | Required | Description                                                                                                                                      |
 | --------------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
