@@ -20,8 +20,7 @@ Run either of these commands inside the terminal:
   $ yarn add @holmesdev/sync
 ```
 
-> [!IMPORTANT]
-> [Styled-components](https://styled-components.com/docs/basics#installation) is the JavaScript CSS library used to build our components. To ensure that they work as intended, you will need to separately install `styled-components` within both the `devDependencies` & `peerDependencies` inside of your `package.json` upon installation of the package.
+> [!IMPORTANT] > [Styled-components](https://styled-components.com/docs/basics#installation) is the JavaScript CSS library used to build our components. To ensure that they work as intended, you will need to separately install `styled-components` within both the `devDependencies` & `peerDependencies` inside of your `package.json` upon installation of the package.
 >
 > You <ins>MUST</ins> also ensure that you are:
 >
@@ -40,6 +39,7 @@ Install the latest package version if required:
   $ npm install @holmesdev/sync@latest
   $ yarn add @holmesdev/sync@latest
 ```
+
 ## Usage
 
 Import the components (together or separately, depending on usage) inside your project:
@@ -47,12 +47,13 @@ Import the components (together or separately, depending on usage) inside your p
 ```js
 import { Button, Alert, AlertDialog } from "@holmesdev/sync";
 ```
+
 ### Button Component
 
 A `Button` that allows the user to trigger an action when clicked. It comes with a selection of themes/variants.
 
 ```js
-import Button from "@holmesdev/sync";
+import { Button }  from "@holmesdev/sync";
 
 <Button
   variant="primary"
@@ -74,12 +75,13 @@ _________________________________________________
   Success Action
 </Button>
 ```
+
 ### Alert Component
 
 An `Alert` box that appears on the page with a status notification or an action request. It comes with a selection of themes/statuses.
 
 ```js
-import Alert from "@holmesdev/sync";
+import { Alert } from "@holmesdev/sync";
 
 <Alert
   title="Success!"
@@ -114,12 +116,13 @@ ________________________________________________
   status="warning"
 />
 ```
+
 ### AlertDialog Component
 
 The role of `AlertDialog` is to "link" the `Alert` & `Button` components together, as well as toggling the visibility of the `Alert` on the page.
 
 ```js
-import AlertDialog from "@holmesdev/sync";
+import { AlertDialog } from "@holmesdev/sync";
 
 <AlertDialog
   title="Success!"
@@ -147,12 +150,13 @@ ________________________________________________
   Show Error
 </AlertDialog>
 ```
+
 ## Props
 
 ### Button Component
 
 | Prop         | Type       | Required | Description                                                                         |
-| :----------- | :--------- | :------- | :---------------------------------------------------------------------------------  |
+| :----------- | :--------- | :------- | :---------------------------------------------------------------------------------- |
 | `children`   | `string`   | Yes      | Text or content inside the `Button`.                                                |
 | `variant`    | `string`   | No       | `Button` style. Options: `default`, `primary`, `success`, `warning`.                |
 | `hoverColor` | `string`   | No       | Color displayed on hover.                                                           |
@@ -170,17 +174,17 @@ ________________________________________________
 
 ### AlertDialog Component
 
-| Prop            | Type       | Required | Description                                                                                                                                      |
-| :-------------- | :--------- | :------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `title`         | `string`   | Yes      | Title text displayed inside the component.                                                                                                       |
-| `body`          | `string`   | Yes      | Body text displayed inside the component.                                                                                                        |
-| `children`      | `string`   | Yes      | The child elements of the button component.                                                                                                      |
-| `btnColor`      | `string`   | Yes      | Specifies the `X close button`'s color.                                                                                                          |
-| `ariaLabel`     | `string`   | No       | Accessibility label for screen readers, describing the purpose of the dialog.                                                                    |
-| `status`        | `enum`     | Yes      | Specifies the visual theme – Options: `["default", "primary", "success", "warning", "defaultDark", "primaryDark", "successDark", "warningDark"]`.|
-| `buttonVariant` | `enum`     | Yes      | Specifies the `Button`'s variant – Options: `["default", "primary", "success", "warning"]`.                                                      |
-| `isOpen`        | `boolean`  | No       | If `true`, the component is open; if `false`, the component isn't open.                                                                          |
-| `onClose`       | `function` | No       | Called when the component is closed.                                                                                                             |
+| Prop            | Type       | Required | Description                                                                                                                                       |
+| :-------------- | :--------- | :------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `title`         | `string`   | Yes      | Title text displayed inside the component.                                                                                                        |
+| `body`          | `string`   | Yes      | Body text displayed inside the component.                                                                                                         |
+| `children`      | `string`   | Yes      | The child elements of the button component.                                                                                                       |
+| `btnColor`      | `string`   | Yes      | Specifies the `X close button`'s color.                                                                                                           |
+| `ariaLabel`     | `string`   | No       | Accessibility label for screen readers, describing the purpose of the dialog.                                                                     |
+| `status`        | `enum`     | Yes      | Specifies the visual theme – Options: `["default", "primary", "success", "warning", "defaultDark", "primaryDark", "successDark", "warningDark"]`. |
+| `buttonVariant` | `enum`     | Yes      | Specifies the `Button`'s variant – Options: `["default", "primary", "success", "warning"]`.                                                       |
+| `isOpen`        | `boolean`  | No       | If `true`, the component is open; if `false`, the component isn't open.                                                                           |
+| `onClose`       | `function` | No       | Called when the component is closed.                                                                                                              |
 
 ## Themes
 
