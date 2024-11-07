@@ -152,7 +152,7 @@ ________________________________________________
 ### Button Component
 
 | Prop         | Type       | Required | Description                                                                         |
-| ------------ | ---------- | -------- | ---------------------------------------------------------------------------------   |
+| :----------- | :--------- | :------- | :---------------------------------------------------------------------------------  |
 | `children`   | `string`   | Yes      | Text or content inside the `Button`.                                                |
 | `variant`    | `string`   | No       | `Button` style. Options: `default`, `primary`, `success`, `warning`.                |
 | `hoverColor` | `string`   | No       | Color displayed on hover.                                                           |
@@ -163,7 +163,7 @@ ________________________________________________
 ### Alert Component
 
 | Prop     | Type     | Required | Description                                                                                                                  |
-| -------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| :------- | :------- | :------- | :--------------------------------------------------------------------------------------------------------------------------- |
 | `title`  | `string` | Yes      | Content to be displayed inside the `Alert`.                                                                                  |
 | `status` | `string` | Yes      | Alert type. Options: `default`, `primary`, `success`, `warning`, `defaultDark`, `primaryDark`, `successDark`, `warningDark`. |
 | `body`   | `string` | Yes      | Body text displayed inside the `Alert`.                                                                                      |
@@ -171,7 +171,7 @@ ________________________________________________
 ### AlertDialog Component
 
 | Prop            | Type       | Required | Description                                                                                                                                      |
-| --------------- | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| :-------------- | :--------- | :------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
 | `title`         | `string`   | Yes      | Title text displayed inside the component.                                                                                                       |
 | `body`          | `string`   | Yes      | Body text displayed inside the component.                                                                                                        |
 | `children`      | `string`   | Yes      | The child elements of the button component.                                                                                                      |
